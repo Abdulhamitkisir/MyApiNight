@@ -16,5 +16,12 @@ namespace MyApiNight.DataAccessLayer.EntityFramework
         {
 
         }
+
+        public int GetProductCount()
+        {
+            var context=new ApiContext();
+            int value=context.Products.Count();
+            return value;
+        }
     }
 }
