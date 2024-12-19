@@ -1,0 +1,35 @@
+﻿@model List<MyApiNight.WebUI.Dtos.ResultProductDto>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Product Stock</th>
+                <th>Product Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.ProductId</th>
+                    <th>@item.ProductName</th>
+                    <th>@item.ProductStock</th>
+                    <th>@item.ProductPrice</th>
+                    <th><a href="/Products/DeleteProduct/@item.ProductId" class="btn btn-danger">Delete</a></th>
+                    <th><a href="/Products/UpdateProducts/@item.ProductId" class="btn btn-success">Update</a></th>
+                </tr>
+            }
+        </table>
+        <a href="/Products/CreateProduct" class="btn btn-info">New Category</a>
+    </div>
+</form>
+

@@ -1,0 +1,26 @@
+﻿@model MyApiNight.WebUI.Dtos.CreateProductDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <label>Product Name</label>
+        <br />
+        <input type="text" asp-for="ProductName" class="form-control" />
+        <br />
+        <label>Product Price</label>
+        <br />
+        <input type="text" asp-for="ProductPrice" class="form-control" />
+        <br />
+        <label>Product Stock</label>
+        <br />
+        <input type="text" asp-for="ProductStock" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Create Category </button>
+    </div>
+</form>
+

@@ -3,7 +3,30 @@
     Layout = null;
 }
 
-@foreach (var item in Model)
-{
-    <p>@item.CategoryName</p>    
-}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Category Name</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <th>@item.CategoryId</th>
+                <th>@item.CategoryName</th>
+                <th><a href="/Categories/DeleteCategory/@item.CategoryId" class="btn btn-danger">Delete</a></th>
+                <th><a href="/Categories/UpdateCategory/@item.CategoryId" class="btn btn-success">Update</a></th>
+            </tr>    
+            }
+        </table>
+        <a href="/Categories/CreateCategory" class="btn btn-info">New Category</a>
+    </div>
+</form>
+
